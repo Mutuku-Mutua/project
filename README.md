@@ -2,10 +2,10 @@
 :Weather App.
 
 ## Project-Description: 
-This application is for checking the weather status of various cities across the world
+This application is for checking the weather status of various cities and/or town across the world
 
 ## Instructions :
-Simple weather app that displays the current day, month and year,also displays the temperature of the city in Fahrenheit(°F) , on click on the temperature section the user can convert the temperature from fahrenheit to celsius and also the Highs and Lows of the city in fahrenheit .
+Simple weather app that displays the current temperature, humidity  and windspeed of a select city or town.
 
 ## OPerating On the search bar :
 The user will enter a city of they choice and press the enter key for it to run.

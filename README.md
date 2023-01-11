@@ -8,6 +8,6 @@
 
 ##Technologies this app was build on pure HTML and javascript and style with css.
 
-##License This project is licensed under MIT license.
+##License :This project is licensed under MIT license.
 
 ##Author Mutuku Mutua

@@ -10,4 +10,4 @@
 
 ##License This project is licensed under MIT license.
 
-##author Mutuku Mutua
+##Author Mutuku Mutua

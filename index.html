@@ -4,37 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>umoroto</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div id="login-form-wrap">
-        <h2>Login</h2>
-        <form id="login-form">
-          <p>
-          <input type="text" id="username" name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
-          </p>
-          <p>
-          <input type="email" id="email" name="email" placeholder="Email Address" required><i class="validation"><span></span><span></span></i>
-          </p>
-          <p>
-          <input type="submit" id="login-btn" value="Login">
-          </p>
-        </form>
-        <div id="create-account-wrap">
-          <p>Not a member? <a href="#">Create Account</a><p>
-        </div>
+    <img src="./pat-whelen-gtdsIafBdIU-unsplash.jpg" alt="clouds">
+    <div class="app-wrap">
+        <header>
+            <input type="text" autocomplete="off" class="search-box" placeholder="search City">
+        </header>
+        <main>
+            <section class="Location">
+                <div class="City"> Nairobi</div>
+                <div class="date">Monday 01 January</div>
+                
+            </section>
+            <div class="current">
+                <div class="Temp"> 15 <span> °F</span></div>
+                <div class="weather">sunny</div>
+             
+                <div class="hi-low">13<span>°F</span> / 17<span>°F</span></div>
+
+            </div>
+        </main>
     </div>
 
 
 
-
-
-
-
-
-
-
-    <script src="./index.js"></script>  
+  <script src="main.js"></script>
 </body>
 </html>

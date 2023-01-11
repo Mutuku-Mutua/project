@@ -1,4 +1,4 @@
-##PROJECT NAME Weather App.
+##PROJECT NAME :Weather App.
 
 ##Project-Description: this application is for checking the weather status of various cities across the world
 

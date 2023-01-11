@@ -11,7 +11,7 @@ Simple weather app that displays the current day, month and year,also displays t
 The user will enter a city of they choice and press the enter key for it to run.
 
 ## Technologies :
-this app was build on pure HTML and javascript and style with css.
+This app was build on pure HTML and javascript and style with css.
 
 ## License :
 This project is licensed under MIT license.

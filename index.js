@@ -1,64 +1,127 @@
-
- const searchBox = document.querySelector('.search-box');
- searchBox.addEventListener('keypress',setQuery);
- const backgroundImg = document.querySelector("img")
- function setQuery(event) {
-    if (event.keyCode == 13){
-        getResults(searchBox.value);
-        searchBox.value = ""   
-    } 
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
  }
-
- function getResults (query) {
-    fetch(`${api.base}weather?q=${query}&unit=metric&APPID=${api.key}`)
-    .then(weather => {
-        return weather.json();
-    }).then(displayResults);
-
- }
-
- function displayResults (weather) {
-    console.log(weather);
-    let city = document.querySelector('.Location .City');
-    city.innerText = `${weather.name}, ${weather.sys.country}`;
-
-    let now = new Date();
-    let date = document.querySelector('.Location .date');
-    date.innerText = dateBuilder(now);
-
-
-     let temp = document.querySelector('.Temp');
-     temp.innerHTML = `${Math.round(weather.main.temp)}<span>°F </span>`;
-
-     let celsius = (weather.main.temp - 32) * (5 / 9);
-
-     temp.addEventListener("click", () =>{
-      temp.innerHTML = `${Math.floor(celsius)}<span>°C</span>`
-      
-     })
-
-     let weatherEl = document.querySelector('.current .weather');
-     weatherEl.innerText = weather.weather[0].main;
-
-     
-
-     let hiLow = document.querySelector('.hi-low');
-     hiLow.innerText = `${Math.round(weather.main.temp_min)}°F / ${Math.round(weather.main.temp_max)}°F`;
-
-     backgroundImg.src = "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-
+ 
+ body {
+   font-family:sans-serif ;
+   
+ background-size:   cover;    
+ background-position: 0rem;
+ 
  }    
- function dateBuilder (d) {
-    let months = ["January","February","March","April","May",
-    "June","July","August","september",
-    "October","November","December"];
-    let days = ["Sunday","Monday","Tuesday","Wednesday",
-    "Thursday","Friday","Saturday"];
-
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`;
+ 
+ img{
+   height: 100%;
+   width: 100%;
+   position: absolute;
+ }
+ 
+ .app-wrap {
+   display: flex;
+   flex-direction: column;
+   background-image: linear-gradient();
+   position: relative;
+ }
+ 
+ header {
+   display :flex;
+   justify-content: center;
+   align-items: center;
+   padding: 50px 15px 15px;
+ 
+ }
+ 
+ header input{
+   width:100%;
+   max-width: 280px;
+   padding: 10px 15px;
+   border: none;
+   outline: none;
+   background-color: rgba(255, 255, 255, 0.144);
+   border-radius: 16px 0px 16px 0px;
+   border-bottom:3px solid #DF8E00 ;
+   color: #222222;
+   font-size: 20px;
+   font-weight: 300;
+   transition: 0.2s ease-out;
+ }
+ 
+ header input:focus {
+   background-color: rgba(255, 255, 255, 0.877);
+ }
+ 
+ main{
+   flex: 1 1 100%;
+   padding: 25px 25px 50px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+ 
+ }
+ 
+ .Location .City{
+   color:rgb(32, 26, 26);
+   font-family: sans-serif;
+   font-style: italic;
+   font-size: 100px;
+   font-weight:  800;
+   margin-bottom: 5px;
+ }
+ 
+ 
+ .Location .date{
+   color: rgb(2, 0, 0);
+   font-family: sans-serif;
+   font-size: 16px;
+ 
+ }
+ 
+ 
+ .current .Temp{
+   color: white;
+   font-style: italic;
+   font-family: sans-serif;
+   font-size: 102px;
+   font-weight: 700;
+   margin:  30px 0px;
+   text-shadow: 2px 10px rgba(0,0,0,0.4);
+   cursor: pointer;
+ 
+ }
+ .Temp:hover{
+   color: rgb(24, 43, 44);
+ }
+ 
+ .current .Temp span{
+   font-weight: 500;
+   font-size: 30px;
+ 
+ }
+ 
+ .current .weather {
+   color:   white;
+   font-family: sans-serif;
+   font-size: 32px;
+   font-weight: 700;
+   font-style: italic ;
+   margin-bottom: 15px;
+   text-shadow: 0px 3px rgba(0,0,0,0.3);
+ 
+ }
+ 
+ 
+ .current .hi-low{
+   color:   white;
+   font-family: sans-serif;
+   font-size: 24px;
+   font-weight: 500;
+   text-shadow: 0px 4px rgba(0,0,0,0.4);
+ 
+ }
+ 
+ .current.hi-low span{
+   font-size:5px;
  }
